@@ -81,7 +81,7 @@ flowchart TD
 
 ---
 
-## 🚀 Como Executar este Projeto
+##  Como Executar este Projeto
 
 ### Pré-requisitos
 * [Salesforce CLI (`sf`)](https://developer.salesforce.com/tools/salesforcecli) instalado.
