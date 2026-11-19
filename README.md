@@ -110,5 +110,5 @@ sf apex run test --class-names CreditProposalServiceTest --result-format human -
 
 ---
 
-## 👩‍💻 Autora
+##  Autora
 Desenvolvido por **Tássia Barbosa** como projeto prático de portfólio para desenvolvimento corporativo na plataforma Salesforce.
