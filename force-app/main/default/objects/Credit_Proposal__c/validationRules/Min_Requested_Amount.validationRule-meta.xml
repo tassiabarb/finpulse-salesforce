@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Min_Requested_Amount</fullName>
+    <active>true</active>
+    <description>Garante que nenhuma proposta seja cadastrada com valor menor que R$ 1.000,00.</description>
+    <errorConditionFormula>Requested_Amount__c &lt; 1000</errorConditionFormula>
+    <errorDisplayField>Requested_Amount__c</errorDisplayField>
+    <errorMessage>O valor solicitado da proposta deve ser de no mínimo R$ 1.000,00.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,101 @@
+<template>
+    <lightning-card title="Simulador de Crédito FinPulse" icon-name="standard:currency">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Carregando..." size="medium"></lightning-spinner>
+        </template>
+
+        <div class="slds-p-around_medium">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" medium-device-size="7" class="slds-p-right_medium">
+                    <h3 class="slds-text-heading_small slds-m-bottom_small">Dados da Simulação</h3>
+
+                    <lightning-input 
+                        label="Nome do Cliente" 
+                        type="text" 
+                        value={customerName} 
+                        data-field="customerName" 
+                        onchange={handleInputChange}
+                        required>
+                    </lightning-input>
+                    
+                    <lightning-input 
+                        label="E-mail" 
+                        type="email" 
+                        value={customerEmail} 
+                        data-field="customerEmail" 
+                        onchange={handleInputChange}
+                        required>
+                    </lightning-input>
+                  
+                    <lightning-input 
+                        label="Valor do Empréstimo (R$)" 
+                        type="number" 
+                        formatter="currency" 
+                        step="1000" 
+                        value={requestedAmount} 
+                        data-field="requestedAmount" 
+                        onchange={handleInputChange}
+                        required>
+                    </lightning-input>
+                   
+                    <lightning-input 
+                        label="Prazo (Meses)" 
+                        type="number" 
+                        min="6" 
+                        max="120" 
+                        value={termMonths} 
+                        data-field="termMonths" 
+                        onchange={handleInputChange}
+                        required>
+                    </lightning-input>
+                    
+                    <lightning-input 
+                        label="Valor das Garantias (R$)" 
+                        type="number" 
+                        formatter="currency" 
+                        step="1000" 
+                        value={collateralValue} 
+                        data-field="collateralValue" 
+                        onchange={handleInputChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" medium-device-size="5">
+                    <h3 class="slds-text-heading_small slds-m-bottom_small">Resultado da Análise</h3>
+
+                    <div class="slds-box slds-theme_shade">
+                        <div class="slds-m-bottom_medium slds-text-align_center">
+                            <p class="slds-text-title_caps slds-text-color_weak">Score de Risco Estimado</p>
+                            <p class="slds-text-heading_large slds-m-vertical_x-small">
+                                <strong>{calculatedRiskScore}</strong> <span class="slds-text-body_regular">/ 1000</span>
+                            </p>
+                            <span class={riskBadgeClass}>{riskBadgeLabel}</span>
+                        </div>
+
+                        <hr class="slds-m-vertical_small" />
+
+                        <div class="slds-text-align_center slds-m-bottom_small">
+                            <p class="slds-text-title_caps slds-text-color_weak">Parcela Mensal Estimada</p>
+                            <p class="slds-text-heading_medium slds-text-color_success slds-m-vertical_xx-small">
+                                <strong>R$ {estimatedMonthlyPayment}</strong>
+                            </p>
+                            <p class="slds-text-body_small slds-text-color_weak">
+                                Estimativa em {termMonths}x com taxa base de {annualInterestRate}% a.a.
+                            </p>
+                        </div>
+
+                        <div class="slds-m-top_medium">
+                            <lightning-button 
+                                variant="brand" 
+                                label="Gerar Proposta Oficial" 
+                                onclick={handleCreateProposal} 
+                                class="slds-size_full"
+                                disabled={isLoading}>
+                            </lightning-button>
+                        </div>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
