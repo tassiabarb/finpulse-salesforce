@@ -1,4 +1,4 @@
-# FinPulse – Sistema Inteligente de Gestão e Análise de Crédito no Salesforce
+# FinPulse - Sistema Inteligente de Gestão e Análise de Crédito no Salesforce
 
 [![Salesforce DX](https://img.shields.io/badge/Salesforce-DX-blue.svg)](https://developer.salesforce.com/)
 [![Apex Language](https://img.shields.io/badge/Language-Apex-orange.svg)](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/)
