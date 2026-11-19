@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 Visão Geral do Projeto
+##  Visão Geral do Projeto
 
 O **FinPulse** substitui processos lentos e manuais de concessão de crédito por uma esteira 100% automatizada e auditável dentro do Salesforce:
 * **Simulação Interativa (LWC):** Permite simular valores, prazos e garantias com recálculo instantâneo de parcelas e score na tela.
@@ -20,7 +20,7 @@ O **FinPulse** substitui processos lentos e manuais de concessão de crédito po
 
 ---
 
-## 🏛️ Arquitetura da Solução
+##  Arquitetura da Solução
 
 ```mermaid
 flowchart TD
@@ -47,7 +47,7 @@ flowchart TD
 
 ---
 
-## 🧱 Componentes Técnicos do Repositório
+##  Componentes Técnicos do Repositório
 
 ### 1. Modelagem de Dados Declarativa (Data Model)
 * **`Credit_Proposal__c` (Objeto Pai):** Armazena dados cadastrais, valor solicitado, prazos, score de risco e campos de auditoria.
